@@ -47,7 +47,7 @@ public class settingActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        mediaPlayer.start();
+        audioPlay();
     }
 
     private void audioPlay(){

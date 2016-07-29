@@ -19,8 +19,9 @@ public class MainmenuActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmenu);
-        Button btn1=(Button) this.findViewById(R.id.button);
-        Button btn2=(Button) this.findViewById(R.id.button2);
+        Button btn1=(Button) this.findViewById(R.id.gamestting);
+        Button btn2=(Button) this.findViewById(R.id.gamestart);
+        Button btn3=(Button) this.findViewById(R.id.startsignupB);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +33,13 @@ public class MainmenuActivity extends Activity {
             @Override
             public void onClick(View view){
                 Intent intent=new Intent(MainmenuActivity.this,playActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent=new Intent(MainmenuActivity.this,signupActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +55,7 @@ public class MainmenuActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        mediaPlayer.start();
+        audioPlay();
     }
 
     private void audioPlay(){
